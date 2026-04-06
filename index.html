@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stáhnout AMD Ryzen 9 9950X3D ZDARMA</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap');
+
+        :root {
+            --amd-red: #ED1C24;
+            --amd-orange: #FF4500;
+            --dark-bg: #121212;
+            --panel-bg: #1e1e1e;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            background-image: radial-gradient(circle at 50% 0%, #3a0d0d 0%, var(--dark-bg) 60%);
+        }
+
+        .container {
+            background-color: var(--panel-bg);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(237, 28, 36, 0.2);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            border: 1px solid #333;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            background: -webkit-linear-gradient(45deg, var(--amd-red), var(--amd-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 0px 10px rgba(255, 69, 0, 0.3);
+        }
+
+        p.subtitle {
+            color: #aaaaaa;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            background: linear-gradient(90deg, var(--amd-red), var(--amd-orange));
+            border: none;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            animation: pulse 2s infinite;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--amd-orange);
+            animation: none;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 69, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 69, 0, 0); }
+        }
+
+        /* Progress Bar Section */
+        #download-section {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .progress-container {
+            width: 100%;
+            background-color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 25px;
+            margin-bottom: 15px;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(45deg, var(--amd-red), var(--amd-orange), var(--amd-red));
+            background-size: 200% 200%;
+            border-radius: 10px;
+            transition: width 0.3s ease;
+            animation: gradientMove 2s linear infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 100% 0; }
+            100% { background-position: -100% 0; }
+        }
+
+        #status-text {
+            font-size: 1rem;
+            color: #ffcc00;
+            font-weight: bold;
+            min-height: 24px;
+        }
+
+        #result {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: rgba(0, 255, 0, 0.1);
+            border: 1px solid #00ff00;
+            color: #00ff00;
+        }
+
+        .disclaimer {
+            margin-top: 30px;
+            font-size: 0.7rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Ryzen 9 9950X3D</h1>
+        <p class="subtitle">Proč kupovat hardware, když ho můžete stáhnout přes Wi-Fi?</p>
+
+        <button id="download-btn" class="btn">ZAHÁJIT STAHOVÁNÍ</button>
+
+        <div id="download-section">
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            <p id="status-text">Inicializace kvantového stahování...</p>
+        </div>
+
+        <div id="result">
+            <h3 style="margin-top:0;">ÚSPĚCH! 🎉</h3>
+            <p>Procesor byl úspěšně stažen na váš pevný disk.</p>
+            <p style="color: #fff;"><i>Prosím, zasuňte chladič Noctua přímo do USB portu, aby nedošlo k roztavení monitoru.</i></p>
+        </div>
+
+        <p class="disclaimer">Varování: Stahování hardwaru může způsobit zmatení zákonů termodynamiky a dočasnou ztrátu zdravého rozumu. V-Cache není kompatibilní s mikrovlnnou troubou.</p>
+    </div>
+
+    <script>
+        document.getElementById('download-btn').addEventListener('click', function() {
+            this.style.display = 'none';
+            document.getElementById('download-section').style.display = 'block';
+
+            let progressBar = document.getElementById('progress-bar');
+            let statusText = document.getElementById('status-text');
+            let resultBox = document.getElementById('result');
+
+            let progress = 0;
+            
+            // Vtipné hlášky, které se mění během stahování
+            const messages = [
+                "Inicializace kvantového spojení s AMD servery...",
+                "Stahování 16 fyzických jader (zbývá 12)...",
+                "Stahování 16 fyzických jader (zbývají 4)...",
+                "Pěchování 144MB 3D V-Cache do vašeho RAM modulu...",
+                "Překračování fyzikálních zákonů termodynamiky...",
+                "Zvyšování taktu routeru na 5.7 GHz...",
+                "Aplikování virtuální teplovodivé pasty na Wi-Fi anténu...",
+                "Kompilace křemíku... prosím neklikejte vedle...",
+                "Ukládání pinů na pevný disk..."
+            ];
+
+            let messageIndex = 0;
+
+            // Interval pro změnu textu
+            let textInterval = setInterval(() => {
+                if (messageIndex < messages.length - 1) {
+                    messageIndex++;
+                    statusText.innerText = messages[messageIndex];
+                }
+            }, 1200);
+
+            // Interval pro progress bar
+            let progressInterval = setInterval(() => {
+                progress += Math.random() * 4 + 1; // Náhodné skoky v progressu
+                
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(progressInterval);
+                    clearInterval(textInterval);
+                    
+                    progressBar.style.width = progress + '%';
+                    statusText.innerText = "Instalace dokončena!";
+                    statusText.style.color = "#00ff00";
+                    
+                    setTimeout(() => {
+                        document.getElementById('download-section').style.display = 'none';
+                        resultBox.style.display = 'block';
+                    }, 1000);
+                } else {
+                    progressBar.style.width = progress + '%';
+                }
+            }, 500);
+        });
+    </script>
+</body>
+</html>
