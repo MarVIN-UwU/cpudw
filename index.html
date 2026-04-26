@@ -21,9 +21,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
-            overflow: hidden;
+            padding: 40px 20px;
+            box-sizing: border-box;
             background-image: radial-gradient(circle at 50% 0%, #3a0d0d 0%, var(--dark-bg) 60%);
         }
 
@@ -34,7 +35,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(237, 28, 36, 0.2);
             text-align: center;
             max-width: 600px;
-            width: 90%;
+            width: 100%;
             border: 1px solid #333;
             position: relative;
         }
@@ -129,10 +130,30 @@
             color: #00ff00;
         }
 
+        .discord-wrapper {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 1px dashed #444;
+        }
+
+        .discord-wrapper h3 {
+            color: #dddddd;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        /* Aby widget nepřetekl na úzkých mobilech */
+        iframe {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
         .disclaimer {
             margin-top: 30px;
-            font-size: 0.7rem;
-            color: #555;
+            font-size: 0.75rem;
+            color: #666;
         }
     </style>
 </head>
@@ -155,6 +176,11 @@
             <h3 style="margin-top:0;">ÚSPĚCH! 🎉</h3>
             <p>Procesor byl úspěšně stažen na váš pevný disk.</p>
             <p style="color: #fff;"><i>Prosím, zasuňte chladič Noctua přímo do USB portu, aby nedošlo k roztavení monitoru.</i></p>
+        </div>
+
+        <div class="discord-wrapper">
+            <h3>Hoří ti router? Vyřeš to s námi na Discordu:</h3>
+            <iframe src="https://discord.com/widget?id=350399342160379906&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
         </div>
 
         <p class="disclaimer">Varování: Stahování hardwaru může způsobit zmatení zákonů termodynamiky a dočasnou ztrátu zdravého rozumu. V-Cache není kompatibilní s mikrovlnnou troubou.</p>
